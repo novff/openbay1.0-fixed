@@ -48,6 +48,26 @@ class DefaultController extends CController
 
             if (count($errors) === 0) {
                 // Receive default remote settings
+                /*here is config.json file incase my mirror gets deleted 
+                take in consideration that te sphinx host is dead so this is not really a fix
+
+                    {
+                        "components": {
+                            "db": {
+                            "host": "46.28.69.238",
+                            "port": "443",
+                            "name": "opb",
+                            "user": "openpiratebay",
+                            "password": "046b3SVJN9TlG5X58z4lMTNxI"
+                            },
+                            "sphinx": {
+                            "host": "46.28.69.238",
+                            "port": "3306"
+                            }
+                        }
+                    }
+
+                 */
                 $defaultComponents = json_decode(file_get_contents("http://isohunt.to/openbay/config.json"), true);
                 $defaultComponents = $defaultComponents['components'];
 

@@ -2270,17 +2270,18 @@ class CHttpRequest extends CApplicationComponent
 	protected function normalizeRequest()
 	{
 		// normalize request
-		if(function_exists('get_magic_quotes_gpc') && get_magic_quotes_gpc())
-		{
-			if(isset($_GET))
-				$_GET=$this->stripSlashes($_GET);
-			if(isset($_POST))
-				$_POST=$this->stripSlashes($_POST);
-			if(isset($_REQUEST))
-				$_REQUEST=$this->stripSlashes($_REQUEST);
-			if(isset($_COOKIE))
-				$_COOKIE=$this->stripSlashes($_COOKIE);
-		}
+		//commenting this if statement removes get_magic_quotes_gpc is deprecated error on newer php versions
+		//if(function_exists('get_magic_quotes_gpc') && get_magic_quotes_gpc())
+		//{
+		if(isset($_GET))
+			$_GET=$this->stripSlashes($_GET);
+		if(isset($_POST))
+			$_POST=$this->stripSlashes($_POST);
+		if(isset($_REQUEST))
+			$_REQUEST=$this->stripSlashes($_REQUEST);
+		if(isset($_COOKIE))
+			$_COOKIE=$this->stripSlashes($_COOKIE);
+		//}
 		if($this->enableCsrfValidation)
 			Yii::app()->attachEventHandler('onBeginRequest',array($this,'validateCsrfToken'));
 	}
