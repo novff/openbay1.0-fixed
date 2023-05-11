@@ -1,11 +1,8 @@
 openbay
 =======
-this is a fork of the old version of openbay aimed at patchinf it up and making it run on modern servers and hostings
+this is a fork of the 1.0 version of openbay aimed om patching it up and making it run on modern servers and shared hostings.
 
-
-
-is the open source clone of the piratebay created by the team that brought you [isoHunt](https://isohunt.to) and [oldpiratebay.org](http://oldpiratebay.org).
-
+openbay is a software clone of The Pirate Bay.
 
 
 
@@ -23,7 +20,7 @@ Upload the source code to your host using the hosting guide
 
 Some hosts can unzip sources automatically, others require you to do it manually.
 
-**Step 4. Set hosting environment (optional)**
+**Step 3. Set hosting environment (optional)**
 
 *Apache*
 
